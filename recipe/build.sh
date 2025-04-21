@@ -23,8 +23,6 @@ fi
   --with-security-key-builtin \
   "${_xtra_configure_args[@]}"
 
-export STRIPPROG="$STRIP"
-
 make -j$CPU_COUNT
 # make install generate keys for the host which is not what we want
 make install-nokeys
