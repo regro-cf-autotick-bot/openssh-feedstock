@@ -13,6 +13,9 @@ declare -a _xtra_configure_args
 if [[ "$target_platform" == "linux-ppc64le" ]]; then
   _xtra_configure_args+=(--with-cflags-after=-fzero-call-used-regs=skip)
 fi
+
+export INSTALL=$BUILD_PREFIX/bin/install
+
 ./configure \
   --with-libedit \
   --prefix=$PREFIX \
